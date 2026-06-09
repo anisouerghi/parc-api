@@ -2,6 +2,7 @@ package com.transtu.pacbus.entity;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
+import com.transtu.pacbus.converter.NullSafeIntegerConverter;
 
 @Entity
 @Access(AccessType.FIELD)
@@ -36,7 +37,9 @@ public class AgregaVeh {
     private String normecons;
     private LocalDate vehdatcartgris;
     private LocalDate vehdatcircl;
+    @Convert(converter = NullSafeIntegerConverter.class)
     private Integer kmchas;
+    @Convert(converter = NullSafeIntegerConverter.class)
     private Integer kmdebann;
     private String disp;
     private String marquevl;
